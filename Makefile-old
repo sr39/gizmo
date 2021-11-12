@@ -177,8 +177,7 @@ endif
 
 ifeq ($(SYSTYPE),"Niagara")
 CC               = mpicc
-OPTIMIZE = -O2 -xHost -funroll-loops -no-prec-div -fast-transcendentals fast=2 -fp-model -ipo
-#OPTIMIZE = -02 -xHost -funroll-loop
+OPTIMIZE = -O2 -xHost -funroll-loops -no-prec-div -fast-transcendentals -fp-model fast=2 -ipo
 ifeq (OPENMP,$(findstring OPENMP,$(CONFIGVARS)))
 OPTIMIZE +=-qopenmp -parallel  # openmp required compiler flags
 endif
@@ -193,8 +192,6 @@ HDF5LIB  =  -L${SCINET_HDF5_ROOT}/lib -lhdf5 -lz
 MPICHLIB =
 OPT     += -DUSE_MPI_IN_PLACE -DNO_ISEND_IRECV_IN_DOMAIN -DHDF5_DISABLE_VERSION_CHECK
 endif
-
-
 
 #--------------------------------------------------------------------------------------------
 
@@ -218,8 +215,6 @@ MPICHLIB =
 OPT     += -DUSE_MPI_IN_PLACE
 
 endif
-
-
 
 
 #----------------------------------------------------------------------------------------------
