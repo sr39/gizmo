@@ -223,6 +223,12 @@ void gravity_tree(void)
 #if defined(ADAPTIVE_GRAVSOFT_FORALL) || defined(ADAPTIVE_GRAVSOFT_FORGAS) || defined(RT_USE_GRAVTREE) || defined(SINGLE_STAR_TIMESTEPPING)
                 GravDataIn[j].Mass = P[place].Mass;
 #endif
+#if defined(ADM)
+                GravDataIn[j].adm = 0; // by default, set ADM type = 0
+                if((P[place].Type == 4)||(P[place].Type == 0)) { // if star or gas particle...
+                    if(P[place].adm != 0) {GravDataIn[j].adm = P[place].adm;} // if particle isn't baryon, assign the correct adm type
+                }
+#endif
 #if defined(BH_DYNFRICTION_FROMTREE)
                 if(P[place].Type==5) {GravDataIn[j].BH_Mass = P[place].BH_Mass;}
 #endif

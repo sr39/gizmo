@@ -160,16 +160,16 @@ FINCL =
 
 #----------------------------------------------------------------------------------------------
 ifeq ($(SYSTYPE),"Della")
-CC        = /usr/local/openmpi/1.10.2/gcc/x86_64/bin/mpicc
-CXX       = /usr/local/openmpi/1.10.2/gcc/x86_64/bin/mpic++
-FC        = /usr/local/openmpi/1.10.2/gcc/x86_64/bin/mpif90
+CC        = /usr/local/openmpi/4.1.0/gcc/bin/mpicc
+CXX       = /usr/local/openmpi/4.1.0/gcc/bin/mpic++
+FC        = /usr/local/openmpi/4.1.0/gcc/bin/mpif90
 OPTIMIZE  = -O1
-GSL_INCL  = -I/usr/local/gsl/2.4/x86_64/include
-GSL_LIBS  = -L/usr/local/gsl/2.4/x86_64/lib64
-FFTW_INCL = -I/usr/local/fftw/gcc/openmpi-1.10.2/3.3.4/include
-FFTW_LIBS = -L/usr/local/fftw/gcc/openmpi-1.10.2/3.3.4/lib64
-HDF5INCL  = -I/usr/local/hdf5/gcc/1.8.16/include -DH5_USE_16_API
-HDF5LIB   = -L/usr/local/hdf5/gcc/1.8.16/lib64 -lhdf5 -lz
+GSL_INCL  = -I/usr/local/gsl/2.6/x86_64/include
+GSL_LIBS  = -L/usr/local/gsl/2.6/x86_64/lib64
+FFTW_INCL = -I/usr/local/fftw/gcc/openmpi-4.1.0/3.3.9/include
+FFTW_LIBS = -L/usr/local/fftw/gcc/openmpi-4.1.0/3.3.9/lib64
+HDF5INCL  = -I/usr/local/hdf5/gcc/1.10.6/include -DH5_USE_16_API
+HDF5LIB   = -L/usr/local/hdf5/gcc/1.10.6/lib64 -lhdf5 -lz
 MPICHLIB  =
 endif
 
